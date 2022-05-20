@@ -5,7 +5,7 @@ const CREATE_ORDER_DELAY = 3000;
 const DELIVER_ORDER_DELAY = 2000;
 
 const fetchNearByShop = ({long, lat}) => {
-    console.log(`🧭 Locating the nearby shop at (${long} ${lat})`);
+    console.log(`Locating the nearby shop at (${long} ${lat})`);
     return new Promise((resolve, reject) => {
         setTimeout(function () {
           // Let's assume, it is a nearest pizza shop
@@ -52,12 +52,12 @@ let getMyPizza = (result, type, name) => {
   });
   return new Promise((resolve, reject) => {
     if (myPizza) {
-      console.log(`✔️ Found the Customer Pizza ${myPizza.name}!`);
+      console.log(`Found the Customer Pizza ${myPizza.name}!`);
       resolve(myPizza);
     } else {
       reject(
         new Error(
-          `❌ Sorry, we don't have ${type} ${name} pizza. Do you want anything else?`
+          `Sorry, we don't have ${type} ${name} pizza. Do you want anything else?`
         )
       );
     }
@@ -65,7 +65,7 @@ let getMyPizza = (result, type, name) => {
 };
 
 const fetchBeverages = ({pizzaId}) => {
-    console.log(`🧃 Getting Beverages for the pizza ${pizzaId}...`);
+    console.log(`Getting Beverages for the pizza ${pizzaId}...`);
     return new Promise((resolve, reject) => {
         setTimeout(function () {
           const response = {
@@ -96,7 +96,7 @@ let create = (endpoint, payload) => {
       setTimeout(function () {
         resolve({
           success: true,
-          message: `🍕 The ${type} ${name} pizza order with ${beverage} has been placed successfully.`,
+          message: `The ${type} ${name} pizza order with ${beverage} has been placed successfully.`,
         });
       }, CREATE_ORDER_DELAY);
     });
@@ -129,4 +129,4 @@ function orderPizza(type, name) {
 
 // Order Pizza
 //orderPizza("nonveg", "salami");
-orderPizza("veg", "margherita");
+orderPizza("vega", "margherita");
