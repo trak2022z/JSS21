@@ -129,4 +129,4 @@ function orderPizza(type, name) {
 
 // Order Pizza
 //orderPizza("nonveg", "salami");
-orderPizza("vega", "margherita");
+orderPizza("veg", "margherita");
